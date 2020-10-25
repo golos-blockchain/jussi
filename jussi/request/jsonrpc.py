@@ -107,7 +107,7 @@ class JSONRPCRequest:
             'id': request.get('id', _empty),
             'jsonrpc': request['jsonrpc'],
             'method': 'call',
-            'params': ['condenser_api', urn.method, params]
+            'params': [urn.api, urn.method, params]
         }
 
 
