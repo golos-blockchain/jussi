@@ -27,7 +27,7 @@ def test_params_api_translation(steemd_jussi_request_and_dict):
     jussi_request, jsonrpc_request = steemd_jussi_request_and_dict
     urn = jussi_request.urn
     translated_request_dict = JSONRPCRequest.translate_to_appbase(jsonrpc_request, urn)
-    assert translated_request_dict['params'][0] == 'condenser_api'
+    assert translated_request_dict['params'][0] == jussi_request.urn.api
 
 
 def test_params_method_translation(steemd_jussi_request_and_dict):
