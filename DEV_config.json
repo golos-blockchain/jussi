@@ -7,11 +7,11 @@
   "upstreams": [
     {
       "name": "steemd",
-      "translate_to_appbase": true,
+      "translate_to_appbase": false,
       "urls": [
         [
           "steemd",
-         "https://api.steemit.com"
+         "https://apibeta.golos.today"
         ]
       ],
       "ttls": [
@@ -92,63 +92,6 @@
         [
           "steemd.network_broadcast_api",
           0
-        ]
-      ]
-    },
-    {
-      "name": "appbase",
-      "urls": [
-        [
-          "appbase",
-          "https://api.steemit.com"
-        ]
-      ],
-      "ttls": [
-        [
-          "appbase",
-          -2
-        ],
-        [
-          "appbase.block_api",
-          -2
-        ],
-        [
-          "appbase.database_api",
-          1
-        ]
-      ],
-      "timeouts": [
-        [
-          "appbase",
-          3
-        ],
-        [
-          "appbase.chain_api.push_block",
-          0
-        ],
-        [
-          "appbase.chain_api.push_transaction",
-          0
-        ],
-        [
-          "appbase.network_broadcast_api",
-          0
-        ],
-        [
-          "appbase.condenser_api.broadcast_block",
-          0
-        ],
-        [
-          "appbase.condenser_api.broadcast_transaction",
-          0
-        ],
-        [
-          "appbase.condenser_api.broadcast_transaction_synchronous",
-          0
-        ],
-        [
-          "appbase.condenser_api.get_ops_in_block.params=[2889020,false]",
-          20
         ]
       ]
     }
