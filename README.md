@@ -10,7 +10,7 @@ git clone https://github.com/golos-blockchain/jussi
 cd jussi
 ./build.sh
 ```
-...configure it using `DEV_config.json` file.
+...configure it using `DEV_config.json` file.  
 ...and run it via docker-compose:
 ```
 docker-compose up
