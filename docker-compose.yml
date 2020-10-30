@@ -2,7 +2,7 @@ version: "3.3"
 services:
   jussi:
     restart: "no"
-    image: "golos/jussi:latest"
+    image: "golosblockchain/jussi:latest"
     ports:
       - "8080:8080"
       - "7777:7777"
