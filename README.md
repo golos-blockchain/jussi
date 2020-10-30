@@ -4,15 +4,18 @@ A reverse proxy that only speaks json-rpc 2.0. Upstream routing is done using js
 
 ## Building & Running
 
-The easiest way to get up and running with jussi is by running it in a docker container.
-
-1) Copy the example `DEV_config.json` to a local directory and make any necessary edits.
-2) Run this docker command (replace `/path/to/config.json` with the path to your config file): 
+The easiest way to get up and running with jussi is by building it with `build.sh` script (which uses Docker):
 ```
-docker run -it --env JUSSI_UPSTREAM_CONFIG_FILE=/app/config.json -v /path/to/config.json:/app/config.json -p 8080:8080 steemit/jussi:latest
+git clone https://github.com/golos-blockchain/jussi
+cd jussi
+./build.sh
 ```
-
-You can build jussi using docker which will run it's full test suite with `docker build -t="myname/jussi:latest" .`
+...configure it using `DEV_config.json` file.
+...and run it via docker-compose:
+```
+docker-compose up
+```
+It runs Jussi on 8080 port.
 
 ## Namespaces
 A json-rpc method namespace is a json-rpc method prefix joined to the method name with a period, so a method in the "sbds" namespace begins with `sbds.` and will be forwarded to a sbds endpoint:
