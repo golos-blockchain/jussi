@@ -4,7 +4,7 @@ A reverse proxy that only speaks json-rpc 2.0. Upstream routing is done using js
 
 ## Building & Running
 
-The easiest way to get up and running with jussi is by building it with `build.sh` script (which uses Docker):
+The easiest way to get up and running with jussi is to build it with `build.sh` script (which uses Docker):
 ```
 git clone https://github.com/golos-blockchain/jussi
 cd jussi
