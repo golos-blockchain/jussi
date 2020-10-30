@@ -17,30 +17,30 @@ def test_urns(urn_test_request_dict):
 
 
 @pytest.mark.parametrize("jsonrpc_request,expected", [
-    # steemd, bare_method
+    # golos, bare_method
     ({'id': 1,
       'jsonrpc': '2.0',
       'method': 'get_account_count',
       'params': []},
-     'steemd.database_api.get_account_count.params=[]'
+     'golos.database_api.get_account_count.params=[]'
      ),
-    # steemd, method=call
+    # golos, method=call
     ({
         'id': 1,
         'jsonrpc': '2.0',
         'method': 'call',
         'params': ['database_api', 'get_account_count', []]
     },
-        'steemd.database_api.get_account_count.params=[]'
+        'golos.database_api.get_account_count.params=[]'
     ),
-    # steemd, method=call, numeric api
+    # golos, method=call, numeric api
     ({
         'id': 1,
         'jsonrpc': '2.0',
         'method': 'call',
         'params': [0, 'get_account_count', []]
     },
-        'steemd.database_api.get_account_count.params=[]'
+        'golos.database_api.get_account_count.params=[]'
     ),
     # appbase, dotted method, condenser api
     ({
@@ -50,7 +50,7 @@ def test_urns(urn_test_request_dict):
     },
         'appbase.condenser_api.appbase_method.params=[]'
     ),
-    # steemd, condenser api, method=call
+    # golos, condenser api, method=call
     ({
         'id': 1,
         'jsonrpc': '2.0',
@@ -107,9 +107,9 @@ def test_urn_params_empty_dict(jsonrpc_request, expected):
 
 
 @pytest.mark.parametrize("jsonrpc_request,expected", [
-    # steemd, bare_method
+    # golos, bare_method
     ({'id': 1, 'jsonrpc': '2.0', 'method': 'get_dynamic_global_properties'},
-        'steemd.database_api.get_dynamic_global_properties'
+        'golos.database_api.get_dynamic_global_properties'
      ),
     # appbase, dotted method, non-condenser api
     ({'id': 1, 'jsonrpc': '2.0', 'method': 'non_condenser_api.appbase_method'},
@@ -148,4 +148,4 @@ def test_urn_pairs(steemd_method_pairs):
     old_urn = str(from_request(old))
     new_urn = str(from_request(new))
     assert old_urn == new_urn
-    assert old_urn.startswith('steemd.database_api')
+    assert old_urn.startswith('golos.database_api')

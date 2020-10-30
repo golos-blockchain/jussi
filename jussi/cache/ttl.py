@@ -3,7 +3,7 @@
 Method Settings
 ---------------
 - Each tuple in the METHOD_SETTING's list of tuples is a setting
-- Each setting is a two-tuple of `prefix` and `ttl`, eg, ('steemd.database_api.get_block',1)
+- Each setting is a two-tuple of `prefix` and `ttl`, eg, ('golos.database_api.get_block',1)
 - Settings are stored in a trie structure, the longest matching prefix for a method is it's setting
 - TTL is an integer value in seconds. Integers <= 0 have special meaning
   - A TTL of `0` won't expire

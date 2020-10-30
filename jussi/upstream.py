@@ -88,13 +88,13 @@ class _Upstreams(object):
 
     @functools.lru_cache(8192)
     def url(self, request_urn) -> str:
-        # certain steemd.get_state paths must be routed differently
+        # certain golos.get_state paths must be routed differently
         if (request_urn.api in ['database_api', 'condenser_api']
                 and request_urn.method == 'get_state'
                 and isinstance(request_urn.params, list)
                 and len(request_urn.params) == 1
                 and ACCOUNT_TRANSFER_PATTERN.match(request_urn.params[0])):
-            url = os.environ.get('JUSSI_ACCOUNT_TRANSFER_STEEMD_URL')
+            url = os.environ.get('JUSSI_ACCOUNT_TRANSFER_GOLOS_URL')
             if url:
                 return url
 

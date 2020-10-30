@@ -112,17 +112,17 @@ def is_valid_non_error_jussi_response(
 
 
 def is_get_block_request(request: JSONRPCRequest) -> bool:
-    return request.urn.namespace in ('steemd', 'appbase') and request.urn.method == 'get_block'
+    return request.urn.namespace in ('golos', 'appbase') and request.urn.method == 'get_block'
 
 
 def is_get_block_header_request(request: JSONRPCRequest) -> bool:
     return request.urn.namespace in (
-        'steemd', 'appbase') and request.urn.method == 'get_block_header'
+        'golos', 'appbase') and request.urn.method == 'get_block_header'
 
 
 def is_get_dynamic_global_properties_request(request: JSONRPCRequest) -> bool:
     return request.urn.namespace in (
-        'steemd', 'appbase') and request.urn.method == 'get_dynamic_global_properties'
+        'golos', 'appbase') and request.urn.method == 'get_dynamic_global_properties'
 
 
 def is_valid_get_block_response(

@@ -85,7 +85,7 @@ async def test_cache_response_middleware(test_cli):
     response = await test_cli.post('/', json=req)
     assert await response.json() == expected_steemd_response
     response = await test_cli.post('/', json=req)
-    assert response.headers['x-jussi-cache-hit'] == 'steemd.database_api.get_dynamic_global_properties'
+    assert response.headers['x-jussi-cache-hit'] == 'golos.database_api.get_dynamic_global_properties'
 
 
 async def test_mocked_cache_response_middleware(mocked_app_test_cli):
@@ -96,5 +96,5 @@ async def test_mocked_cache_response_middleware(mocked_app_test_cli):
     assert await response.json() == expected_response
 
     response = await test_cli.post('/', json=req, headers={'x-jussi-request-id': '1'})
-    assert response.headers['x-jussi-cache-hit'] == 'steemd.database_api.get_dynamic_global_properties'
+    assert response.headers['x-jussi-cache-hit'] == 'golos.database_api.get_dynamic_global_properties'
     assert await response.json() == expected_response

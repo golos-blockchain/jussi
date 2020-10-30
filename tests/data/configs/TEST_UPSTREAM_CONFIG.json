@@ -4,90 +4,90 @@
   },
   "upstreams": [
     {
-      "name": "steemd",
+      "name": "golos",
       "urls": [
         [
-          "steemd",
+          "golos",
           "wss://steemd.steemitdev.com"
         ]
       ],
       "ttls": [
         [
-          "steemd",
+          "golos",
           3
         ],
         [
-          "steemd.login_api",
+          "golos.login_api",
           -1
         ],
         [
-          "steemd.network_broadcast_api",
+          "golos.network_broadcast_api",
           -1
         ],
         [
-          "steemd.follow_api",
+          "golos.follow_api",
           10
         ],
         [
-          "steemd.market_history_api",
+          "golos.market_history_api",
           1
         ],
         [
-          "steemd.database_api",
+          "golos.database_api",
           3
         ],
         [
-          "steemd.database_api.get_block",
+          "golos.database_api.get_block",
           -2
         ],
         [
-          "steemd.database_api.get_block_header",
+          "golos.database_api.get_block_header",
           -2
         ],
         [
-          "steemd.database_api.get_content",
+          "golos.database_api.get_content",
           1
         ],
         [
-          "steemd.database_api.get_state",
+          "golos.database_api.get_state",
           1
         ],
         [
-          "steemd.database_api.get_state.params=['/trending']",
+          "golos.database_api.get_state.params=['/trending']",
           30
         ],
         [
-          "steemd.database_api.get_state.params=['trending']",
+          "golos.database_api.get_state.params=['trending']",
           30
         ],
         [
-          "steemd.database_api.get_state.params=['/hot']",
+          "golos.database_api.get_state.params=['/hot']",
           30
         ],
         [
-          "steemd.database_api.get_state.params=['/welcome']",
+          "golos.database_api.get_state.params=['/welcome']",
           30
         ],
         [
-          "steemd.database_api.get_state.params=['/promoted']",
+          "golos.database_api.get_state.params=['/promoted']",
           30
         ],
         [
-          "steemd.database_api.get_state.params=['/created']",
+          "golos.database_api.get_state.params=['/created']",
           10
         ],
         [
-          "steemd.database_api.get_dynamic_global_properties",
+          "golos.database_api.get_dynamic_global_properties",
           1
         ]
       ],
       "timeouts": [
         [
-          "steemd",
+          "golos",
           3
         ],
         [
-          "steemd.network_broadcast_api",
+          "golos.network_broadcast_api",
           0
         ]
       ]

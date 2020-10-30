@@ -52,7 +52,7 @@ def test_request_upstream(urn_test_request_dict):
     jsonrpc_request, urn, url, ttl, timeout = urn_test_request_dict
     dummy_request = make_request()
     jussi_request = jsonrpc_from_request(dummy_request, 0, jsonrpc_request)
-    os.environ['JUSSI_ACCOUNT_TRANSFER_STEEMD_URL'] = 'account_transfer_url'
+    os.environ['JUSSI_ACCOUNT_TRANSFER_GOLOS_URL'] = 'account_transfer_url'
     assert jussi_request.upstream.url == url
 
 

@@ -54,12 +54,12 @@ def block_num_from_jsonrpc_response(
     if previous:
         return int(str(previous)[:8], base=16) + 1
 
-    # for steemd get_block
+    # for golos get_block
     block_id = get_in(['result', 'block_id'], jsonrpc_response)
     if block_id:
         return int(str(block_id)[:8], base=16)
 
-    # for steemd get_block_header
+    # for golos get_block_header
     previous = get_in(['result', 'previous'],
                       jsonrpc_response)
     if previous:

@@ -20,7 +20,7 @@ JRPC_METHOD_PATTERN = r'(^(?P<appbase_api>[^\.]+_api)\.(?P<appbase_method>[^\.]+
 JRPC_METHOD_REGEX = re.compile(JRPC_METHOD_PATTERN)
 
 
-STEEMD_NUMERIC_API_MAPPING = ('database_api', 'login_api')
+GOLOS_NUMERIC_API_MAPPING = ('database_api', 'login_api')
 
 
 RawRequestDict = Dict[str, Union[str, float, int, list, dict]]
@@ -117,7 +117,7 @@ def _parse_jrpc(single_jsonrpc_request) -> dict:
 
             if method != 'call':
                 return {
-                    'namespace': 'steemd',
+                    'namespace': 'golos',
                     'api': 'database_api',
                     'method': method,
                     'params': params
@@ -132,12 +132,12 @@ def _parse_jrpc(single_jsonrpc_request) -> dict:
                 if api == 'condenser_api' or isinstance(_params, dict) or api == 'jsonrpc':
                     namespace = 'appbase'
                 else:
-                    namespace = 'steemd'
+                    namespace = 'golos'
             if isinstance(api, int):
                 try:
-                    api = STEEMD_NUMERIC_API_MAPPING[api]
+                    api = GOLOS_NUMERIC_API_MAPPING[api]
                 except IndexError:
-                    raise InvalidNamespaceAPIError(namespace='steemd',
+                    raise InvalidNamespaceAPIError(namespace='golos',
                                                    api=api)
 
             return {

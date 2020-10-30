@@ -21,7 +21,7 @@ correct_get_block_1000_response = {
 test_request = {
     'id': 1,
     'jsonrpc': '2.0',
-    'method': 'steemd.fake_method'
+    'method': 'golos.fake_method'
 }
 
 error_response1 = {'id': 1, 'jsonrpc': '2.0', 'error': {

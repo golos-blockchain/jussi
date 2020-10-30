@@ -22,11 +22,11 @@ correct_get_block_1000_response = {
     'jsonrpc_request, expected',
     [
         (
-            # single jsonrpc steemd request
+            # single jsonrpc golos request
             dict(id=1, jsonrpc='2.0', method='get_block', params=[1000]),
             correct_get_block_1000_response
         ),
-        # batch jsronrpc steemd request
+        # batch jsronrpc golos request
         (
             [
                 dict(id=1, jsonrpc='2.0', method='get_block', params=[1000]),
@@ -35,7 +35,7 @@ correct_get_block_1000_response = {
             [correct_get_block_1000_response, correct_get_block_1000_response]
         ),
         (
-            # single jsonrpc old-style steemd requests
+            # single jsonrpc old-style golos requests
             dict(
                 id=1,
                 jsonrpc='2.0',
@@ -44,7 +44,7 @@ correct_get_block_1000_response = {
             correct_get_block_1000_response
         ),
         (
-            # batch jsonrpc old-style steemd request
+            # batch jsonrpc old-style golos request
             [
                 dict(
                     id=1,
@@ -60,7 +60,7 @@ correct_get_block_1000_response = {
             [correct_get_block_1000_response, correct_get_block_1000_response]
         ),
         (
-            # batch jsonrpc mixed-style steemd request
+            # batch jsonrpc mixed-style golos request
             [
                 dict(id=1, jsonrpc='2.0', method='get_block', params=[1000]),
                 dict(id=1, jsonrpc='2.0', method='call', params=[
