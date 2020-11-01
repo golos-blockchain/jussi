@@ -2,20 +2,22 @@ version: "3.3"
 services:
   jussi:
     restart: "no"
+    container_name: jussi
     image: "golosblockchain/jussi:latest"
     ports:
       - "8080:8080"
-      - "7777:7777"
+      #- "7777:7777"
     environment:
       JUSSI_REDIS_URL: redis://redis1:6379
-      JUSSI_REDIS_READ_REPLICA_URLS: redis://redis2:6379
+      #JUSSI_REDIS_READ_REPLICA_URLS: redis://redis2:6379
     volumes:
-      - /root/jussi/DEV_config.json:/app/DEV_config.json
+      - ./DEV_config.json:/app/DEV_config.json
   redis1:
     restart: "no"
+    container_name: redis
     image: "redis:3.2"
-  redis2:
-    restart: "no"
-    image: "redis:3.2"
-    ports:
-      - "6379:6379"
+  #redis2:
+    #restart: "no"
+    #image: "redis:3.2"
+    #ports:
+      #- "6379:6379"

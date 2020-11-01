@@ -10,6 +10,12 @@ git clone https://github.com/golos-blockchain/jussi
 cd jussi
 ./build.sh
 ```
+
+Just want to get up and running quickly? Try deploying a prebuilt dockerized container
+```
+docker pull golosblockchain/jussi:latest
+```
+
 ...configure it using `DEV_config.json` file.  
 ...and run it via docker-compose:
 ```
@@ -77,7 +83,7 @@ Each urls key can have multiple endpoints for each namespace. For example:
 ```
 {
   "urls":[
-    ["appbase", "https://api.steemitdev.com"]
+    ["golos", "https://api.golos.com"]
   ]
 }
 ```
@@ -87,9 +93,9 @@ Each urls key can have multiple endpoints for each namespace. For example:
 ```
 {
   "urls":[
-    ["appbase","https://api.steemitdev.com"],
-    ["appbase.condenser_api.get_account_history","https://api-for-account-history.steemitdev.com"],
-    ["appbase.condenser_api.get_ops_in_block","https://api-for-get-ops-in-block.steemitdev.com"]
+    ["golos","https://api.golos.com"],
+    ["golos.account_history.get_account_history","https://api-for-account-history.golos.com"],
+    ["golos.operation_history.get_ops_in_block","https://api-for-get-ops-in-block.golos.com"]
   ]
 }
 ```

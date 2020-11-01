@@ -1,7 +1,7 @@
 {
   "limits": {
     "blacklist_accounts": [
-      "non-steemit"
+      "login-golos"
     ]
   },
   "upstreams": [
@@ -32,10 +32,6 @@
           1
         ],
         [
-          "golos.database_api",
-          3
-        ],
-        [
           "golos.database_api.get_block",
           -2
         ],
@@ -49,23 +45,19 @@
         ],
         [
           "golos.social_network.get_content",
-          1
-        ],
-        [
-          "golos.social_network.get_content_replies",
-          1
+          10
         ],
         [
           "golos.social_network.get_all_content_replies",
-          1
+          10
         ],
         [
           "golos.social_network.get_donates",
-          1
+          10
         ],
         [
           "golos.tags",
-          30
+          10
         ]
       ],
       "timeouts": [
