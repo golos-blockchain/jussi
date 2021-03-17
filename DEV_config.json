@@ -23,11 +23,13 @@
         ["golos.social_network.get_donates",3],
         ["golos.social_network.get_donates_for_targets",-1],
         ["golos.follow",15],
-        ["golos.database_api.get_block",-2]
+        ["golos.database_api.get_block",-2],
+        ["golos.private_message.set_callback",-1]
       ],
       "timeouts": [
         ["golos",5],
-        ["golos.network_broadcast_api",0]
+        ["golos.network_broadcast_api",0],
+        ["golos.private_message.set_callback",15]
       ]
     }
   ]
