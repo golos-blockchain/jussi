@@ -19,8 +19,8 @@ async def update_last_irreversible_block_num(request: HTTPRequest, response: HTT
         return
     request.timings.append((perf_counter(), 'update_last_irreversible_block_num.enter'))
     try:
-        jsonrpc_response = ujson.loads(response.body)
         if is_get_dynamic_global_properties_request(request.jsonrpc):
+            jsonrpc_response = ujson.loads(response.body)
             last_irreversible_block_num = jsonrpc_response['result']['last_irreversible_block_num']
             cache_group = request.app.config.cache_group
             request.app.config.last_irreversible_block_num = last_irreversible_block_num
