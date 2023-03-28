@@ -117,7 +117,6 @@ class JussiInteralError(Exception):
                  jrpc_request: JrpcRequest=None,
                  jrpc_response: JrpcResponse=None,
                  exception: Exception = None,
-                 log_traceback: bool = False,
                  error_logger: logging.Logger = None,
                  **kwargs) -> None:
 
@@ -128,7 +127,7 @@ class JussiInteralError(Exception):
         self.jsonrpc_request = jrpc_request
         self.jsonrpc_response = jrpc_response
         self.exception = exception
-        self.log_traceback = log_traceback
+        self.log_traceback = http_request.app.config.args.log_traceback
         self.logger = error_logger or logger
         self.kwargs = kwargs
 
