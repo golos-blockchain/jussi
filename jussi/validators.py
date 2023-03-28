@@ -184,7 +184,7 @@ def limit_broadcast_transaction_request(request: JSONRPCRequest, limits=None) ->
         else:
             raise ValueError(
                 f'Unknown request params type: {type(request.urn.params)} urn:{request.urn}')
-        ops = [op for op in request_params['operations'] if op[0] == 'custom_json']
+        ops = [op for op in request_params['operations'] if op['type'] == 'custom_json']
         if not ops:
             return
         blacklist_accounts = set()
