@@ -129,6 +129,10 @@ def parse_args(args: list = None):
     parser.add_argument('--statsd_url', type=str, env_var='JUSSI_STATSD_URL',
                         help='statsd://host:port',
                         default=None)
+    parser.add_argument('--log_traceback', type=lambda x: bool(strtobool(x)), 
+                        env_var='JUSSI_LOG_TRACEBACK', 
+                        help='Add traceback information to error message',
+                        default=False)
 
     return parser.parse_args(args=args)
 

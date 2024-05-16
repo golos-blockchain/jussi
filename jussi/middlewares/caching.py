@@ -67,6 +67,8 @@ async def cache_response(request: HTTPRequest, response: HTTPResponse) -> None:
             return
         if 'x-jussi-error-id' in response.headers:
             return
+        if request.jsonrpc.upstream.ttl == -1: #don't waste time parsing response if not cacheable
+            return
         jsonrpc_response = loads(response.body)
         if not jsonrpc_response:
             return
